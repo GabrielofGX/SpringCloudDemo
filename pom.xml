@@ -11,6 +11,7 @@
     <modules>
         <module>EurekaServer</module>
         <module>ServiceApplication_1</module>
+        <module>ServiceApplication_2</module>
     </modules>
 
     <parent>
