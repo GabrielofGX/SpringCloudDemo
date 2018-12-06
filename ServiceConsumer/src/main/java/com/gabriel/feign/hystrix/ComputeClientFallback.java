@@ -1,6 +1,6 @@
-package com.gabriel.feign;
+package com.gabriel.feign.hystrix;
 /*
- * Project: com.gabriel.feign
+ * Project: com.gabriel.feign.hystrix
  *
  * File Created at 2018/8/29
  *
@@ -13,22 +13,24 @@ package com.gabriel.feign;
  * accordance with the terms of the license.
  */
 
-import com.gabriel.feign.hystrix.ComputeClientFallback;
-import org.springframework.cloud.netflix.feign.FeignClient;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import com.gabriel.exception.HystrixException;
+import com.gabriel.feign.ComputeClient;
+import org.springframework.stereotype.Component;
 
 /**
  * @author gabriel
- * @Type ComputeClient
+ * @Type ComputeClientHystrix
  * @Desc
- * @date 2018/8/29 11:24
+ * @date 2018/8/29 13:46
  */
-@FeignClient(value = "ServiceApplication-1", fallback = ComputeClientFallback.class)
-public interface ComputeClient {
+@Component
+public class ComputeClientFallback implements ComputeClient {
 
-	@GetMapping("/add")
-	Integer add(@RequestParam(value = "a") Integer a, @RequestParam(value = "b") Integer b);
+
+	@Override
+	public Integer add(Integer a, Integer b) {
+		throw new HystrixException("feign 调用add出现错误");
+	}
 }
 /**
  * Revision history

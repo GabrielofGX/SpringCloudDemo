@@ -15,35 +15,30 @@ package com.gabriel.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.gabriel.service.ComputeService;
 
 /**
  * @author gabriel
- * @Type ConsumerController
+ * @Type ComputeController
  * @Desc
- * @date 2018/8/29 11:26
+ * @date 2018/8/29 11:12
  */
 @RestController
-public class ConsumerController {
-	private static final Logger log = LoggerFactory.getLogger(ConsumerController.class);
-	@Autowired
-	private ComputeService computeService;
+public class ComputeController {
+    private static final Logger log = LoggerFactory.getLogger(ComputeController.class);
 
 	@GetMapping("/add")
-	public Integer add(){
-		log.info("add");
-		return  computeService.add(10, 20);
+	public Integer add(@RequestParam Integer a, @RequestParam Integer b){
+		log.info("/add, a: " + a + " , b: " + a);
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		return  a + b;
 	}
-
-	@GetMapping("/test")
-	public String test(){
-		return  "hello";
-	}
-
 }
 /**
  * Revision history

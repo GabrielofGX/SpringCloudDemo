@@ -1,8 +1,8 @@
-package com.gabriel.feign.hystrix;
+package com.gabriel.service;
 /*
- * Project: com.gabriel.feign.hystrix
+ * Project: com.gabriel.service
  *
- * File Created at 2018/8/29
+ * File Created at 2018/12/5
  *
  * Copyright 2016 CMCC Corporation Limited.
  * All rights reserved.
@@ -13,23 +13,15 @@ package com.gabriel.feign.hystrix;
  * accordance with the terms of the license.
  */
 
-import com.gabriel.feign.ComputeClient;
-import org.springframework.stereotype.Component;
-
 /**
  * @author gabriel
- * @Type ComputeClientHystrix
+ * @Type ComputeService
  * @Desc
- * @date 2018/8/29 13:46
+ * @date 2018/12/5 10:18
  */
-@Component
-public class ComputeClientHystrix implements ComputeClient {
+public interface ComputeService {
 
-
-	@Override
-	public Integer add(Integer a, Integer b) {
-		return 20;
-	}
+	Integer add(Integer a, Integer b);
 }
 /**
  * Revision history
@@ -37,5 +29,5 @@ public class ComputeClientHystrix implements ComputeClient {
  * <p>
  * Date Author Note
  * -------------------------------------------------------------------------
- * 2018/8/29 gabriel create
+ * 2018/12/5 gabriel create
  */

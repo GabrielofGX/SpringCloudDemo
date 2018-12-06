@@ -9,8 +9,8 @@ import org.springframework.cloud.netflix.feign.EnableFeignClients;
  * Hello world!
  *
  */
-@EnableDiscoveryClient
 @EnableFeignClients
+@EnableDiscoveryClient
 @SpringBootApplication
 public class ConsumerApplication {
     public static void main(String[] args) {

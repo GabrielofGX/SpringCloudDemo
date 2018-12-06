@@ -11,13 +11,12 @@
 
     <artifactId>EurekaServer</artifactId>
 
-   <!-- <dependencies>
+    <dependencies>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-            <version>1.5.10.RELEASE</version>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
         </dependency>
-    </dependencies>-->
+    </dependencies>
 
 
 
