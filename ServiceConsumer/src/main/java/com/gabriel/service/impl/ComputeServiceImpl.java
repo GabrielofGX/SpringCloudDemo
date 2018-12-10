@@ -1,17 +1,4 @@
 package com.gabriel.service.impl;
-/*
- * Project: com.gabriel.service.impl
- *
- * File Created at 2018/12/5
- *
- * Copyright 2016 CMCC Corporation Limited.
- * All rights reserved.
- *
- * This software is the confidential and proprietary information of
- * ZYHY Company. ("Confidential Information").  You shall not
- * disclose such Confidential Information and shall use it only in
- * accordance with the terms of the license.
- */
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -39,11 +26,3 @@ public class ComputeServiceImpl implements ComputeService {
 		return computeClient.add(a, b);
 	}
 }
-/**
- * Revision history
- * -------------------------------------------------------------------------
- * <p>
- * Date Author Note
- * -------------------------------------------------------------------------
- * 2018/12/5 gabriel create
- */

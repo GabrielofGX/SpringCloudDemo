@@ -1,25 +1,15 @@
 package com.gabriel.controller;
-/*
- * Project: com.gabriel.controller
- *
- * File Created at 2018/8/29
- *
- * Copyright 2016 CMCC Corporation Limited.
- * All rights reserved.
- *
- * This software is the confidential and proprietary information of
- * ZYHY Company. ("Confidential Information").  You shall not
- * disclose such Confidential Information and shall use it only in
- * accordance with the terms of the license.
- */
 
+import com.gabriel.Reponse;
+import com.gabriel.User;
+import com.gabriel.service.ComputeService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.gabriel.service.ComputeService;
 
 /**
  * @author gabriel
@@ -34,22 +24,15 @@ public class ConsumerController {
 	private ComputeService computeService;
 
 	@GetMapping("/add")
-	public Integer add(){
+	public Integer add() {
 		log.info("add");
-		return  computeService.add(10, 20);
+		return computeService.add(10, 20);
 	}
 
-	@GetMapping("/test")
-	public String test(){
-		return  "hello";
+	@PostMapping("/test")
+	public Reponse test(@RequestBody User user) {
+		log.info(user.toString());
+		return new Reponse(1000, "success");
 	}
 
 }
-/**
- * Revision history
- * -------------------------------------------------------------------------
- * <p>
- * Date Author Note
- * -------------------------------------------------------------------------
- * 2018/8/29 gabriel create
- */

@@ -1,17 +1,4 @@
 package com.gabriel.controller;
-/*
- * Project: com.gabriel.controller
- *
- * File Created at 2018/8/29
- *
- * Copyright 2016 CMCC Corporation Limited.
- * All rights reserved.
- *
- * This software is the confidential and proprietary information of
- * ZYHY Company. ("Confidential Information").  You shall not
- * disclose such Confidential Information and shall use it only in
- * accordance with the terms of the license.
- */
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -40,11 +27,3 @@ public class ComputeController {
 		return  a + b;
 	}
 }
-/**
- * Revision history
- * -------------------------------------------------------------------------
- * <p>
- * Date Author Note
- * -------------------------------------------------------------------------
- * 2018/8/29 gabriel create
- */

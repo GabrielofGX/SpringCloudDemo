@@ -12,3 +12,15 @@ spring:
 feign:
   hystrix:
     enabled: true
+
+ribbon:
+  ReadTimeout: 45000
+  MaxAutoRetriesNextServe: 0
+  MaxAutoRetries: 2
+
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: false
